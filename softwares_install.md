@@ -1,3 +1,14 @@
+# 目录
+
+- [STEP1：命令提示符 cmd 的基础知识及配置](#step1命令提示符-cmd-的基础知识及配置)
+- [STEP2：Node.js 的安装及验证](#step2nodejs-的安装及验证)
+- [STEP3：Markdown、TOML、JSON 等文本格式阅读器的安装](#step3markdowntomljson-等文本格式阅读器的安装)
+- [STEP4：如何使用 Codex](#step4如何使用-codex)
+- [STEP5：Git 的安装及验证](#step5git-的安装及验证)
+- [STEP6：GitHub 的注册及 Git 关联提交验证](#step6github-的注册及-git-关联提交验证)
+
+---
+
 # STEP1：命令提示符 cmd 的基础知识及配置
 
 ## 1.1 打开 cmd
