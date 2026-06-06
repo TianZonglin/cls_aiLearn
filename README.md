@@ -25,7 +25,7 @@
 
 安装教程见：
 
-[softwares_install.md](./softwares_install.md)
+[study_0_softwares_install.md](./study_0_softwares_install.md)
 
 ### 第 2 周前：安装问题处理
 
@@ -72,7 +72,7 @@
 ## 仓库文件
 
 ```text
-softwares_install.md                 软件安装与配置教程
+study_0_softwares_install.md         软件安装与配置教程
 f259d36b7cdee7279e4546caa51c39b0.png  Codex 配置教程原始图片
 README.md                            课程说明
 ```
