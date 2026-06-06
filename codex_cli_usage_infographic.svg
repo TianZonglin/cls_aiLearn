@@ -1,0 +1,200 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2200" viewBox="0 0 1600 2200" role="img" aria-labelledby="title desc">
+  <title id="title">Codex CLI 使用教程图解</title>
+  <desc id="desc">一张说明 Codex CLI 启动流程、常用斜杠命令、适用场景和提交前检查流程的信息图。</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f8fb; }
+      .ink { fill: #152033; }
+      .muted { fill: #5d6a7d; }
+      .blue { fill: #1677ff; }
+      .green { fill: #13a87a; }
+      .orange { fill: #f08a24; }
+      .purple { fill: #7657d8; }
+      .red { fill: #e45454; }
+      .panel { fill: #ffffff; stroke: #d9e1ec; stroke-width: 2; }
+      .panel-soft { fill: #fdfefe; stroke: #dfe6f0; stroke-width: 2; }
+      .code { fill: #111827; }
+      .codeText { fill: #e8eef8; font-family: Consolas, "Cascadia Mono", monospace; font-size: 27px; }
+      .smallCodeText { fill: #e8eef8; font-family: Consolas, "Cascadia Mono", monospace; font-size: 23px; }
+      .h1 { font-family: "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; font-size: 62px; font-weight: 800; letter-spacing: 0; }
+      .h2 { font-family: "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; font-size: 36px; font-weight: 800; letter-spacing: 0; }
+      .h3 { font-family: "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; font-size: 28px; font-weight: 800; letter-spacing: 0; }
+      .body { font-family: "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; font-size: 25px; letter-spacing: 0; }
+      .small { font-family: "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; font-size: 21px; letter-spacing: 0; }
+      .tiny { font-family: "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; font-size: 18px; letter-spacing: 0; }
+      .badgeText { fill: #ffffff; font-family: "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif; font-size: 22px; font-weight: 800; }
+      .numText { fill: #ffffff; font-family: Arial, sans-serif; font-size: 27px; font-weight: 800; }
+      .arrow { stroke: #8291a8; stroke-width: 4; fill: none; marker-end: url(#arrowHead); }
+      .dash { stroke: #c4cedc; stroke-width: 3; stroke-dasharray: 10 10; fill: none; }
+    </style>
+    <marker id="arrowHead" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#8291a8"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#1d2b3d" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1600" height="2200"/>
+
+  <rect x="90" y="70" width="1420" height="210" rx="24" fill="#101828"/>
+  <text class="h1" x="140" y="155" fill="#ffffff">Codex CLI 使用教程图解</text>
+  <text class="body" x="143" y="210" fill="#c8d5e8">从启动、切换模型、设置权限，到检查修改和提交前审查的一张速览图</text>
+  <rect x="1160" y="122" width="270" height="72" rx="18" fill="#1677ff"/>
+  <text class="badgeText" x="1198" y="168">博士实践课工具准备</text>
+
+  <g filter="url(#shadow)">
+    <rect class="panel" x="90" y="330" width="1420" height="310" rx="22"/>
+  </g>
+  <text class="h2 ink" x="130" y="390">一、先分清两类命令</text>
+
+  <rect class="code" x="135" y="430" width="610" height="150" rx="16"/>
+  <text class="h3" x="165" y="475" fill="#ffffff">终端命令</text>
+  <text class="codeText" x="165" y="520">codex</text>
+  <text class="codeText" x="165" y="556">codex -m gpt-5.4</text>
+  <text class="small muted" x="135" y="618">在 cmd / PowerShell / Git Bash 中输入，用来启动或一次性执行任务。</text>
+
+  <rect class="code" x="855" y="430" width="610" height="150" rx="16"/>
+  <text class="h3" x="885" y="475" fill="#ffffff">斜杠命令</text>
+  <text class="codeText" x="885" y="520">/model   /status   /diff</text>
+  <text class="codeText" x="885" y="556">/plan    /review   /compact</text>
+  <text class="small muted" x="855" y="618">进入 Codex 交互界面后输入，用来控制当前会话。</text>
+
+  <line class="dash" x1="795" y1="420" x2="795" y2="610"/>
+  <circle cx="795" cy="510" r="42" fill="#eef4ff" stroke="#c6d8ff" stroke-width="2"/>
+  <text class="h3 blue" x="764" y="520">vs</text>
+
+  <g filter="url(#shadow)">
+    <rect class="panel" x="90" y="690" width="1420" height="390" rx="22"/>
+  </g>
+  <text class="h2 ink" x="130" y="750">二、推荐使用流程</text>
+
+  <g>
+    <circle cx="180" cy="835" r="34" class="blue"/>
+    <text class="numText" x="171" y="845">1</text>
+    <rect class="panel-soft" x="235" y="790" width="330" height="120" rx="18"/>
+    <text class="h3 ink" x="265" y="835">进入项目目录</text>
+    <text class="small muted" x="265" y="874">避免 Codex 改错地方</text>
+    <rect class="code" x="260" y="930" width="280" height="58" rx="12"/>
+    <text class="smallCodeText" x="282" y="967">cd /d 项目路径</text>
+  </g>
+  <path class="arrow" d="M585 850 H690"/>
+
+  <g>
+    <circle cx="750" cy="835" r="34" class="green"/>
+    <text class="numText" x="741" y="845">2</text>
+    <rect class="panel-soft" x="805" y="790" width="330" height="120" rx="18"/>
+    <text class="h3 ink" x="835" y="835">启动 Codex</text>
+    <text class="small muted" x="835" y="874">进入交互式 AI 编程环境</text>
+    <rect class="code" x="830" y="930" width="280" height="58" rx="12"/>
+    <text class="smallCodeText" x="858" y="967">codex</text>
+  </g>
+  <path class="arrow" d="M1155 850 H1260"/>
+
+  <g>
+    <circle cx="1320" cy="835" r="34" class="orange"/>
+    <text class="numText" x="1311" y="845">3</text>
+    <rect class="panel-soft" x="1185" y="910" width="280" height="120" rx="18"/>
+    <text class="h3 ink" x="1220" y="956">输入任务</text>
+    <text class="small muted" x="1220" y="995">让 Codex 读、写、改、查</text>
+  </g>
+
+  <rect x="155" y="1018" width="1260" height="2" fill="#e1e7f0"/>
+  <text class="small muted" x="170" y="1058">一句话记住：先进入项目目录，再启动 codex；任务复杂时先 /plan，修改后用 /diff 和 /review 检查。</text>
+
+  <g filter="url(#shadow)">
+    <rect class="panel" x="90" y="1130" width="680" height="665" rx="22"/>
+  </g>
+  <text class="h2 ink" x="130" y="1190">三、核心斜杠命令</text>
+
+  <g>
+    <rect x="130" y="1230" width="290" height="86" rx="18" fill="#eef4ff"/>
+    <text class="h3 blue" x="158" y="1266">/model</text>
+    <text class="small muted" x="158" y="1298">切换模型和推理强度</text>
+
+    <rect x="445" y="1230" width="285" height="86" rx="18" fill="#eaf8f3"/>
+    <text class="h3 green" x="473" y="1266">/permissions</text>
+    <text class="small muted" x="473" y="1298">设置读写和审批权限</text>
+
+    <rect x="130" y="1340" width="290" height="86" rx="18" fill="#fff3e7"/>
+    <text class="h3 orange" x="158" y="1376">/plan</text>
+    <text class="small muted" x="158" y="1408">复杂任务先出方案</text>
+
+    <rect x="445" y="1340" width="285" height="86" rx="18" fill="#f1edff"/>
+    <text class="h3 purple" x="473" y="1376">/status</text>
+    <text class="small muted" x="473" y="1408">查看模型、目录、权限</text>
+
+    <rect x="130" y="1450" width="290" height="86" rx="18" fill="#eef4ff"/>
+    <text class="h3 blue" x="158" y="1486">/diff</text>
+    <text class="small muted" x="158" y="1518">看 Codex 改了什么</text>
+
+    <rect x="445" y="1450" width="285" height="86" rx="18" fill="#fdeeee"/>
+    <text class="h3 red" x="473" y="1486">/review</text>
+    <text class="small muted" x="473" y="1518">提交前做代码审查</text>
+
+    <rect x="130" y="1560" width="290" height="86" rx="18" fill="#eaf8f3"/>
+    <text class="h3 green" x="158" y="1596">/compact</text>
+    <text class="small muted" x="158" y="1628">长对话压缩上下文</text>
+
+    <rect x="445" y="1560" width="285" height="86" rx="18" fill="#fff3e7"/>
+    <text class="h3 orange" x="473" y="1596">/mention</text>
+    <text class="small muted" x="473" y="1628">指定文件给 Codex 看</text>
+  </g>
+
+  <rect class="code" x="130" y="1690" width="600" height="72" rx="14"/>
+  <text class="smallCodeText" x="160" y="1735">输入 / 可打开当前版本支持的命令列表</text>
+
+  <g filter="url(#shadow)">
+    <rect class="panel" x="830" y="1130" width="680" height="665" rx="22"/>
+  </g>
+  <text class="h2 ink" x="870" y="1190">四、什么时候用哪个命令</text>
+
+  <g>
+    <circle cx="900" cy="1255" r="13" class="blue"/>
+    <text class="body ink" x="930" y="1265">任务变复杂：用 /model 切强模型</text>
+    <text class="small muted" x="930" y="1298">多文件修改、复杂调试、架构设计</text>
+
+    <circle cx="900" cy="1350" r="13" class="orange"/>
+    <text class="body ink" x="930" y="1360">不确定怎么做：先 /plan</text>
+    <text class="small muted" x="930" y="1393">先看方案，再决定是否让 Codex 修改</text>
+
+    <circle cx="900" cy="1445" r="13" class="green"/>
+    <text class="body ink" x="930" y="1455">担心改错文件：用 /status</text>
+    <text class="small muted" x="930" y="1488">确认工作目录、模型、权限和上下文</text>
+
+    <circle cx="900" cy="1540" r="13" class="purple"/>
+    <text class="body ink" x="930" y="1550">修改后要验收：/diff + /review</text>
+    <text class="small muted" x="930" y="1583">先看改动，再让 Codex 做审查</text>
+
+    <circle cx="900" cy="1635" r="13" class="red"/>
+    <text class="body ink" x="930" y="1645">聊太久变慢：用 /compact</text>
+    <text class="small muted" x="930" y="1678">保留摘要，继续当前任务</text>
+
+    <circle cx="900" cy="1730" r="13" class="orange"/>
+    <text class="body ink" x="930" y="1740">换新任务：用 /new 或 /clear</text>
+    <text class="small muted" x="930" y="1773">避免旧上下文干扰新任务</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect class="panel" x="90" y="1845" width="1420" height="245" rx="22"/>
+  </g>
+  <text class="h2 ink" x="130" y="1905">五、推荐提交前检查流程</text>
+
+  <rect class="code" x="135" y="1948" width="315" height="76" rx="15"/>
+  <text class="codeText" x="170" y="1997">/status</text>
+  <path class="arrow" d="M470 1986 H570"/>
+
+  <rect class="code" x="590" y="1948" width="315" height="76" rx="15"/>
+  <text class="codeText" x="635" y="1997">/diff</text>
+  <path class="arrow" d="M925 1986 H1025"/>
+
+  <rect class="code" x="1045" y="1948" width="315" height="76" rx="15"/>
+  <text class="codeText" x="1085" y="1997">/review</text>
+
+  <text class="small muted" x="150" y="2065">确认目录和权限</text>
+  <text class="small muted" x="605" y="2065">查看文件改动</text>
+  <text class="small muted" x="1060" y="2065">提交前审查风险</text>
+
+  <rect x="90" y="2125" width="1420" height="2" fill="#d9e1ec"/>
+  <text class="tiny muted" x="125" y="2165">配套教程：study_1_codex_cli_commands.md ｜ 建议学习顺序：/model → /permissions → /plan → /status → /diff → /review → /compact → /quit</text>
+</svg>
