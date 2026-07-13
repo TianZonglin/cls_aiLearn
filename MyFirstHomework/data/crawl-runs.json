@@ -1,0 +1,75 @@
+{
+  "updatedAt": "2026-07-02T03:02:22.240Z",
+  "items": [
+    {
+      "id": "npopss-1782961113485",
+      "source": "npopss",
+      "startedAt": "2026-07-02T02:58:33.485Z",
+      "endedAt": "2026-07-02T02:58:34.494Z",
+      "status": "success",
+      "totalFetched": 142,
+      "totalSaved": 0,
+      "errorMessage": null
+    },
+    {
+      "id": "moe-1782961158068",
+      "source": "moe",
+      "startedAt": "2026-07-02T02:59:18.068Z",
+      "endedAt": "2026-07-02T02:59:31.914Z",
+      "status": "success",
+      "totalFetched": 15233,
+      "totalSaved": 0,
+      "errorMessage": null
+    },
+    {
+      "id": "npopss-1782961173433",
+      "source": "npopss",
+      "startedAt": "2026-07-02T02:59:33.433Z",
+      "endedAt": "2026-07-02T02:59:33.942Z",
+      "status": "failed",
+      "totalFetched": 0,
+      "totalSaved": 0,
+      "errorMessage": "UNKNOWN: unknown error, open 'C:\\Users\\admin\\Documents\\yangjingjing\\data\\projects.snapshot.json'"
+    },
+    {
+      "id": "moe-1782961220713",
+      "source": "moe",
+      "startedAt": "2026-07-02T03:00:20.713Z",
+      "endedAt": "2026-07-02T03:00:34.663Z",
+      "status": "success",
+      "totalFetched": 15233,
+      "totalSaved": 0,
+      "errorMessage": null
+    },
+    {
+      "id": "npopss-1782961236412",
+      "source": "npopss",
+      "startedAt": "2026-07-02T03:00:36.412Z",
+      "endedAt": "2026-07-02T03:00:36.839Z",
+      "status": "success",
+      "totalFetched": 142,
+      "totalSaved": 0,
+      "errorMessage": null
+    },
+    {
+      "id": "moe-1782961325953",
+      "source": "moe",
+      "startedAt": "2026-07-02T03:02:05.953Z",
+      "endedAt": "2026-07-02T03:02:20.065Z",
+      "status": "success",
+      "totalFetched": 15233,
+      "totalSaved": 0,
+      "errorMessage": null
+    },
+    {
+      "id": "npopss-1782961341812",
+      "source": "npopss",
+      "startedAt": "2026-07-02T03:02:21.812Z",
+      "endedAt": "2026-07-02T03:02:22.238Z",
+      "status": "success",
+      "totalFetched": 142,
+      "totalSaved": 0,
+      "errorMessage": null
+    }
+  ]
+}

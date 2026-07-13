@@ -1,0 +1,25 @@
+.DS_Store
+**/.DS_Store
+.env
+__pycache__/
+*.pyc
+.venv/
+
+# Local-only generated workflow outputs
+exports/*
+!exports/.gitkeep
+!exports/literature_notes_sample.csv
+logs/*
+!logs/.gitkeep
+!logs/sync_sample.md
+materials/**/*.md
+materials/**/*.docx
+!materials/.gitkeep
+!materials/by_topic/.gitkeep
+!materials/by_chapter/.gitkeep
+!materials/special/.gitkeep
+!materials/word/.gitkeep
+!materials/sample_material_pack.md
+!materials/special/literature_review_sample.md
+!materials/special/theory_sample.md
+!materials/word/README.md

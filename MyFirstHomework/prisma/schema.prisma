@@ -1,0 +1,51 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Project {
+  id                   String   @id @default(cuid())
+  source               String
+  sourceProjectId      String?
+  title                String
+  principalInvestigator String?
+  institution          String?
+  discipline           String?
+  fundType             String?
+  year                 Int?
+  projectNumber        String?
+  status               String?
+  keywords             String?
+  summary              String?
+  sourceUrl            String?
+  sourceRaw            Json?
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  @@index([source])
+  @@index([year])
+  @@index([title])
+  @@index([principalInvestigator])
+  @@index([institution])
+  @@index([source, title, principalInvestigator, year])
+  @@unique([source, projectNumber])
+}
+
+model CrawlRun {
+  id           String   @id @default(cuid())
+  source       String
+  startedAt    DateTime
+  endedAt      DateTime?
+  status       String
+  totalFetched Int?
+  totalSaved   Int?
+  errorMessage String?
+  createdAt    DateTime @default(now())
+
+  @@index([source, startedAt])
+  @@index([status])
+}
