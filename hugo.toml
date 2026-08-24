@@ -1,0 +1,4 @@
+baseURL = "https://TianZonglin.github.io/cls_aiLearn/"
+languageCode = "zh-CN"
+title = "cls_aiLearn"
+contentDir = "posts"
